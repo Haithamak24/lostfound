@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Lost & Found · مفقودات الجامعة</title>
+<meta name="description" content="AI lost-and-found that returns items without exposing your ID. Palestine Polytechnic University.">
+<meta property="og:title" content="Campus Lost & Found · مفقودات الجامعة">
+<meta property="og:description" content="صِف غرضك بكلامك، والنظام بلاقيه. والهويات ما بتنعرض لحدا أبداً.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Brand tokens: Mustafa's identity replaces these values, nothing else needs to change */
+  --brand:#0f6b4f; --brand-soft:#e3efe9; --bg:#f4f1ea; --card:#fffdf8;
+  --ink:#1b1f1d; --muted:#5f655f; --line:#e3ddd0; --alert:#b4552c; --alert-soft:#f6e6dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+.en{direction:ltr;text-align:left;color:var(--muted);font-size:15px;line-height:1.6}
+.num{font-family:"Space Grotesk",sans-serif}
+header{padding:22px 0 8px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font:700 20px "Space Grotesk","IBM Plex Sans Arabic",sans-serif;letter-spacing:-.4px;display:flex;align-items:center;gap:8px}
+.logo .mark{width:30px;height:30px;border-radius:9px;background:var(--brand);display:grid;place-items:center}
+.logo .mark svg{width:18px;height:18px}
+.tag{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--card)}
+.hero{padding:34px 0 30px}
+.hero h1{font-size:clamp(30px,7.5vw,46px);line-height:1.25;margin:0 0 14px;letter-spacing:-.5px}
+.hero h1 b{color:var(--brand)}
+.hero p{font-size:19px;margin:0 0 8px}
+.hero .en{font-size:16px;margin-top:10px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
+section{padding:26px 0;border-top:1px solid var(--line)}
+h2{font-size:24px;margin:0 0 4px}
+h2 + .en{margin:0 0 16px}
+.stat{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;background:var(--alert-soft);border-radius:16px;padding:18px 20px;margin:12px 0 16px}
+.stat .big{font:700 46px/1 "Space Grotesk",sans-serif;color:var(--alert)}
+.stat .big small{font-size:22px;color:var(--ink)}
+.stat p{margin:0;flex:1;min-width:200px}
+.evidence{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.cap{font-size:13px;color:var(--muted);margin-top:6px}
+.problems{display:grid;gap:10px;margin-top:14px}
+.problems div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.problems b{display:block}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 18px;position:relative;padding-inline-start:62px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font:700 16px/32px "Space Grotesk",sans-serif;text-align:center}
+.step b{display:block;font-size:18px}
+.step.shield{background:var(--brand-soft);border-color:#c5ddd1}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.res{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.res .v{font:700 30px/1.1 "Space Grotesk",sans-serif;color:var(--brand)}
+.res .l{font-size:14px;margin-top:6px}
+.res .en{text-align:center;font-size:12.5px}
+.video{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.video iframe{width:100%;height:100%;border:0}
+.places{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.places span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:15px}
+.places span.now{background:var(--brand);color:#fff;border-color:var(--brand)}
+.team{display:grid;gap:10px}
+.person{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.person a{color:var(--brand);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+.ask{background:var(--ink);color:#fff;border-radius:20px;padding:24px 22px;margin:8px 0 30px}
+.ask h2{color:#fff}
+.ask .en{color:#c9cfc9}
+.ask a{color:#fff}
+footer{padding:0 0 40px;font-size:13px;color:var(--muted);text-align:center}
+@media(max-width:520px){.results{grid-template-columns:1fr}.res{display:flex;align-items:center;gap:14px;text-align:start}.res .en{text-align:left}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/><path d="M8 10.5l2 2 3.5-3.5"/></svg></span>Lost&amp;Found</div>
+    <span class="tag">Palestine XI · 2026</span>
+  </header>
+
+  <div class="hero">
+    <h1>ضيّعت إشي؟ <b>صِفه بكلامك</b>، والنظام بلاقيه.</h1>
+    <p>نظام ذكاء اصطناعي لإرجاع الأغراض المفقودة بالجامعات، <b>بدون ما تنكشف بياناتك.</b> والهويات ما بتنعرض لحدا أبداً.</p>
+    <p class="en">Lost something? Describe it in your own words, and the AI finds it. Built to return lost items <b>without exposing anyone's ID.</b></p>
+    <div class="cta">
+      <a class="btn primary" href="#how">كيف بيشتغل · How it works</a>
+      <a class="btn ghost" href="#contact">تواصل معنا · Contact</a>
+    </div>
+  </div>
+
+  <!-- VIDEO: when the animation is on YouTube (Unlisted), replace VIDEO_ID and delete the two comment markers around this section.
+  <section>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Project video" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+  </section>
+  -->
+
+  <section>
+    <h2>المشكلة</h2>
+    <p class="en">The problem</p>
+    <p>اليوم، الأغراض اللي بتنلاقى بالجامعة بتنصوّر وبتنزل على مجموعات الواتساب.</p>
+    <p class="en">Today, items found on campus are photographed and posted in WhatsApp groups.</p>
+    <div class="stat">
+      <div class="big num">11<small> / 16</small></div>
+      <p>من الأغراض المنشورة كانت <b>هويات وبطاقات جامعية</b>، وكلها اسم صاحبها ظاهر للمئات.<br><span class="en" style="display:block">of posted items were ID cards, every one showing the owner's name to hundreds of people.</span></p>
+    </div>
+    <img class="evidence" src="evidence.webp" alt="Blurred grid of 16 lost-item posts; 11 are ID documents" loading="lazy">
+    <div class="cap">منشورات حقيقية من مجموعات الواتساب، آب إلى تشرين الأول 2026. البيانات الشخصية مموّهة. · Real posts, Aug to Oct 2026, personal data blurred.</div>
+    <div class="problems">
+      <div><b>🔓 الخصوصية · Privacy</b>أرقام هويات وتواريخ ميلاد وصور بتنتشر للعموم. <span class="en">ID numbers, birth dates and faces shared publicly.</span></div>
+      <div><b>🔍 البحث · Search</b>ما في طريقة تبحث، بس تمرّر وتتمنى. <span class="en">No way to search: you scroll and hope.</span></div>
+      <div><b>❓ التحقق · Verification</b>أي حدا بيقدر يدّعي إنه الغرض إلو. <span class="en">Anyone can claim any item.</span></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>كيف بيشتغل</h2>
+    <p class="en">How it works</p>
+    <div class="steps">
+      <div class="step"><b>📸 الأمن بصوّر الغرض</b>والذكاء الاصطناعي بيعرف شو هو ولونه لحاله.<div class="en">Security snaps a photo. The AI recognises what it is.</div></div>
+      <div class="step"><b>✍️ إنت بتوصفه بكلامك</b>بالعربي، حتى باللهجة الفلسطينية، أو بالإنجليزي. النظام بيرتّب أقرب النتائج، وبنبّهك إذا وصل غرضك بعدين.<div class="en">You describe it in your own words, even in Palestinian dialect. It ranks the closest matches and alerts you if your item turns up later.</div></div>
+      <div class="step shield"><b>🛡️ الهويات محمية</b>النظام بيكتشف الهويات لحاله وما بيعرض صورتها لحدا. صاحبها بثبت إنها إلو قبل ما يستلمها.<div class="en">ID cards are detected automatically and never shown. The owner proves it's theirs before pickup.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>جرّبناه على صور حقيقية</h2>
+    <p class="en">Tested on real photos from our university</p>
+    <div class="results">
+      <div class="res"><div class="v">10/10</div><div><div class="l">هويات اكتشفها النظام تلقائياً</div><div class="en">ID cards auto-detected, 0 false alarms</div></div></div>
+      <div class="res"><div class="v">6/6</div><div><div class="l">أوصاف لقت الغرض الصح أول نتيجة</div><div class="en">English descriptions found the right item first</div></div></div>
+      <div class="res"><div class="v">&lt;0.1s</div><div><div class="l">لكل صورة، على لابتوب عادي</div><div class="en">per photo, on a normal laptop, offline</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>لمين</h2>
+    <p class="en">Who it's for</p>
+    <p>نبدأ بجامعة بوليتكنك فلسطين، وبعدها أي مكان فيه ناس كتير بتضيّع أغراضها.</p>
+    <p class="en">Starting at Palestine Polytechnic University, then anywhere crowds lose things.</p>
+    <div class="places"><span class="now">🎓 جامعة بوليتكنك فلسطين · PPU</span><span>🏫 جامعات · Universities</span><span>🛍️ مولات · Malls</span><span>🏥 مستشفيات · Hospitals</span><span>🏨 فنادق · Hotels</span></div>
+  </section>
+
+  <section>
+    <h2>الفريق</h2>
+    <p class="en">The team · Computer Science, Palestine Polytechnic University</p>
+    <div class="team">
+      <div class="person"><div>هيثم أبو خالد<div class="en">Haitham Abu Khaled</div></div><a href="https://linkedin.com/in/haitham-abu-khaled" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+      <div class="person"><div>مصطفى النتشة<div class="en">Mustafa Al-Natsheh</div></div><!-- MUSTAFA: put your LinkedIn link here --></div>
+      <div class="person"><div>أسامة أبو الحلاوة<div class="en">Osama Abu Al-Halaweh</div></div></div>
+    </div>
+    <p class="cap">المشرفة · Supervisor: Ezdehar Jawabreh</p>
+  </section>
+
+  <div class="ask" id="contact">
+    <h2>بندور على أول مكان يجرّبه معنا</h2>
+    <p class="en">We're looking for a first place to pilot it, and for advice from people who've built things like this.</p>
+    <a class="btn primary" style="margin-top:10px" href="mailto:habwkhald504@gmail.com">✉️ habwkhald504@gmail.com</a>
+  </div>
+
+  <footer>Graduation project · Palestine Polytechnic University · 2026</footer>
+</div>
+</body>
+</html>
